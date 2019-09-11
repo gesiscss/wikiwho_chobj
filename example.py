@@ -39,6 +39,9 @@ if __name__ == "__main__":
         with Timer():
             chobs2 = [x for x in copd.iter_chobjs()]
 
+        import ipdb; ipdb.set_trace()  # breakpoint 4a55751c //
+
+
         df_old = pd.DataFrame(chobs2, columns=chobs2[0].keys())
         df_old = df_old[df_old['from_rev'] >= starting_revid]
 
@@ -58,3 +61,4 @@ if __name__ == "__main__":
             print(sum(df_old['text'] != df_new['text']))
         else:
             print('equal dataframes')
+
